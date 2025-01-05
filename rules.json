@@ -1,57 +1,26 @@
 {
     "saudacoes": [
-        "Olá! Como posso ajudar?",
-        "Oi! O que você gostaria de saber sobre Python?",
-        "Olá! Bem-vindo(a) ao chatbot de Python!",
-        "E aí? Tudo bem? Como posso te ajudar com Python hoje?",
+        "Olá! O que você gostaria de saber sobre Python?",
+        "Oi! Como posso ajudar você com Python hoje?",
         "Fala aí! Pergunte-me qualquer coisa sobre Python."
+    ],
+    "despedidas": [
+        "Até mais!",
+        "Tchau!",
+        "Foi um prazer conversar com você. Até a próxima!"
     ],
     "como_vai": [
         "Estou bem, obrigado! Como posso ajudar você com Python hoje?",
-        "Tudo ótimo! Pronto para responder suas dúvidas sobre Python.",
-        "Muito bem! Em que posso ajudar com Python?",
-        "Tudo bem por aqui! Vamos falar sobre Python?"
+        "Tudo ótimo! O que você gostaria de saber sobre Python?",
+        "E aí? Tudo bem? Como posso te ajudar com Python hoje?"
     ],
-    "despedidas": [
-        "Até mais! Espero ter ajudado.",
-        "Tchau! Volte sempre que tiver dúvidas sobre Python.",
-        "Foi um prazer ajudar. Até a próxima!"
-    ],
-    "o que é python": [
-        "Python é uma linguagem de programação de alto nível, interpretada, de propósito geral, com tipagem dinâmica forte e suporte a múltiplos paradigmas, como o imperativo, orientado a objetos e funcional."
-    ],
-    "como aprender python": [
-        "Você pode começar aprendendo Python através de tutoriais online, cursos (como os da Udemy, Coursera, DataCamp), livros e, o mais importante, praticando bastante!",
-        "Recomendo começar pelo Python.org e depois explorar plataformas como Codecademy e freeCodeCamp. Não se esqueça de praticar muito e construir projetos pessoais!"
-    ],
-    "vantagens python": [
-        "Python é conhecido por sua sintaxe simples e legível, além de ter uma vasta biblioteca de pacotes para diferentes aplicações. É muito usado em análise de dados, IA, web e automação."
-    ],
-    "conceitos python": [
+    "conceitos_python": [
         "Os conceitos fundamentais de Python incluem variáveis, estruturas de dados (listas, dicionários, tuplas), funções, classes, loops e condicionais. Quer saber mais sobre algum desses tópicos específicos?"
     ],
-    "como instalar bibliotecas em python": [
-        "Você pode instalar bibliotecas em Python usando o gerenciador de pacotes pip. Por exemplo, para instalar a biblioteca requests, você usaria o comando 'pip install requests' no seu terminal."
-    ],
-    "o que é poo em python": [
-        "Orientação a Objetos é um paradigma de programação baseado no conceito de 'objetos', que podem conter dados (atributos) e código (métodos). Python suporta POO, permitindo a criação de classes e objetos."
-    ],
-    "diferença entre lista, tupla e conjunto em python": [
-        "Listas são mutáveis e ordenadas. Tuplas são imutáveis e ordenadas. Conjuntos (sets) são mutáveis e não ordenados, e não permitem elementos duplicados."
-    ],
-    "como ler e escrever arquivos em python": [
-        "Você pode usar a função 'open()' para ler e escrever arquivos em Python. Por exemplo: 'with open('arquivo.txt', 'r') as f: conteudo = f.read()' para ler, e 'with open('arquivo.txt', 'w') as f: f.write('texto')' para escrever."
-    ],
-    "repetir": [
-        "Desculpe, não tenho nada para repetir pois não falei nada anteriormente."
-    ],
-    "quem é você": [
-        "Eu sou um chatbot criado para ajudar a responder perguntas sobre Python. Fui desenvolvido por um modelo de linguagem avançado.",
-        "Sou um assistente virtual aqui para tirar suas dúvidas sobre Python e aprendizado de máquina."
-    ],
-    "o que você pode fazer": [
-        "Eu posso responder perguntas sobre Python, te ajudar a entender conceitos da linguagem e te dar dicas de aprendizado.",
-        "Posso te ajudar com dúvidas conceituais de Python, te explicar trechos de código e te auxiliar com boas práticas de programação."
+    "quem_e_voce": [
+        "Eu sou um chatbot de assistência em Python, projetado para ajudar você a aprender e entender melhor os conceitos dessa linguagem.",
+        "Sou um programa de computador que usa inteligência artificial para responder às suas perguntas sobre Python.",
+        "Fui criado para ser um recurso útil para quem está estudando Python, então não hesite em perguntar!"
     ],
     "fallback": [
         "Desculpe, não tenho certeza se entendi sua pergunta. Você pode reformular?",

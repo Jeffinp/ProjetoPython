@@ -1,6 +1,5 @@
-
-import random
 import logging
+import random
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime
 import json
@@ -62,7 +61,7 @@ class PythonChatbot:
         self.model = self._load_model()
         self.conversation_history: List[Dict] = []
         self.last_response_type = None
-        
+
         self._initialize_nlp_resources()
         self._load_rules()
 
@@ -148,7 +147,8 @@ class PythonChatbot:
         """
         embeddings = {}
         for key in self.rules:
-            embeddings[key] = self.model.encode([key], convert_to_tensor=True)
+            if key != "repetir":
+                embeddings[key] = self.model.encode([key], convert_to_tensor=True)
         return embeddings
 
     def _check_casual_conversation(self, text: str) -> Optional[str]:
@@ -219,29 +219,24 @@ class PythonChatbot:
         return question
 
     def _find_best_response(self, question_embedding: torch.Tensor) -> Tuple[str, float]:
-        """
-        Encontra a melhor resposta com base na similaridade dos embeddings.
+        """Finds the best response based on similarity."""
 
-        Args:
-            question_embedding (torch.Tensor): Embedding da pergunta
-
-        Returns:
-            Tuple[str, float]: Resposta e score de similaridade
-        """
-        best_similarity = -1
+        best_similarity = -1  # Initialize appropriately
         best_response = None
 
         for key, rule_embedding in self.rules_embeddings.items():
-            similarity = util.pytorch_cos_sim(
-                question_embedding, rule_embedding
-            )[0].max().item()
-
+            similarity = util.pytorch_cos_sim(question_embedding, rule_embedding)[0].max().item()
             if similarity > best_similarity:
                 best_similarity = similarity
                 best_response = random.choice(self.rules[key])
 
+
         if best_similarity < self.config.similarity_threshold:
-            best_response = random.choice(self.rules["fallback"])
+            casual_response = self._check_casual_conversation(question) 
+            if casual_response:
+                best_response = casual_response
+            else: # Use fallback if casual conversation not found
+                best_response = random.choice(self.rules["fallback"])
 
         return best_response, best_similarity
 
@@ -266,7 +261,6 @@ class PythonChatbot:
 
         last_question = self.conversation_history[-2]['processed_question']
 
-        # Mapeamento de intenções para tópicos
         if "conceit" in last_question:
             return self._explain_python_concepts()
         
@@ -322,7 +316,7 @@ class PythonChatbot:
             processed_question = self._preprocess_question(question)
 
             # Lidar com respostas afirmativas
-            if self._is_affirmative(question):
+            if self._is_affirmative(question) and len(self.conversation_history) > 0:
                 response = self._handle_affirmative_response(processed_question)
                 if response:
                     return response

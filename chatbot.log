@@ -15,3 +15,8 @@
 2025-01-05 11:36:51,796 - INFO - Modelo 'neuralmind/bert-base-portuguese-cased' carregado com sucesso
 2025-01-05 11:36:51,965 - INFO - Regras carregadas com sucesso
 2025-01-05 11:37:42,843 - INFO - Histórico da conversa salvo com sucesso
+2025-01-05 11:45:34,816 - INFO - Usando device: cpu
+2025-01-05 11:45:34,818 - INFO - Load pretrained SentenceTransformer: neuralmind/bert-base-portuguese-cased
+2025-01-05 11:45:35,099 - WARNING - No sentence-transformers model found with name neuralmind/bert-base-portuguese-cased. Creating a new one with mean pooling.
+2025-01-05 11:45:38,050 - INFO - Modelo 'neuralmind/bert-base-portuguese-cased' carregado com sucesso
+2025-01-05 11:45:38,222 - INFO - Regras carregadas com sucesso
