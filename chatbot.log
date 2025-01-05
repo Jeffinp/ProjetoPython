@@ -1,0 +1,11 @@
+2025-01-05 11:12:35,891 - INFO - Usando device: cpu
+2025-01-05 11:12:35,894 - INFO - Load pretrained SentenceTransformer: neuralmind/bert-base-portuguese-cased
+2025-01-05 11:12:36,497 - WARNING - No sentence-transformers model found with name neuralmind/bert-base-portuguese-cased. Creating a new one with mean pooling.
+2025-01-05 11:12:39,522 - INFO - Modelo 'neuralmind/bert-base-portuguese-cased' carregado.
+2025-01-05 11:12:40,091 - INFO - Regras carregadas com sucesso
+2025-01-05 11:22:22,700 - INFO - Histórico da conversa salvo com sucesso.
+2025-01-05 11:28:45,180 - INFO - Usando device: cpu
+2025-01-05 11:28:45,181 - INFO - Load pretrained SentenceTransformer: neuralmind/bert-base-portuguese-cased
+2025-01-05 11:28:45,473 - WARNING - No sentence-transformers model found with name neuralmind/bert-base-portuguese-cased. Creating a new one with mean pooling.
+2025-01-05 11:28:48,226 - INFO - Modelo 'neuralmind/bert-base-portuguese-cased' carregado com sucesso
+2025-01-05 11:28:48,426 - INFO - Regras carregadas com sucesso

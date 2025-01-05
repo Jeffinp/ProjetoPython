@@ -1,0 +1,100 @@
+[
+    {
+        "timestamp": "2025-01-05T11:12:56.828677",
+        "question": "quem é você?",
+        "processed_question": "voce?",
+        "response": "Ainda estou aprendendo sobre Python. Pode tentar perguntar de outra forma?",
+        "similarity_score": 0.5637288689613342
+    },
+    {
+        "timestamp": "2025-01-05T11:13:02.427728",
+        "question": "quem é você",
+        "processed_question": "voc",
+        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
+        "similarity_score": 0.853385329246521
+    },
+    {
+        "timestamp": "2025-01-05T11:13:06.468378",
+        "question": "Que mé você?",
+        "processed_question": "voce?",
+        "response": "Ainda estou aprendendo sobre Python. Pode tentar perguntar de outra forma?",
+        "similarity_score": 0.5637288689613342
+    },
+    {
+        "timestamp": "2025-01-05T11:13:19.901252",
+        "question": "repita",
+        "processed_question": "repit",
+        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
+        "similarity_score": 0.7622452974319458
+    },
+    {
+        "timestamp": "2025-01-05T11:13:34.007103",
+        "question": "falou sim",
+        "processed_question": "fal sim",
+        "response": "Desculpe, eu não entendi o que você quis dizer.  Pode tentar escrever de outra forma?",
+        "similarity_score": 0.6534303426742554
+    },
+    {
+        "timestamp": "2025-01-05T11:13:46.190608",
+        "question": "oq é python?",
+        "processed_question": "python?",
+        "response": "Python é conhecido por sua sintaxe simples e legível, além de ter uma vasta biblioteca de pacotes para diferentes aplicações. É muito usado em análise de dados, IA, web e automação.",
+        "similarity_score": 0.8370246887207031
+    },
+    {
+        "timestamp": "2025-01-05T11:16:41.465350",
+        "question": "& C:/Python312/python.exe c:/Users/jefer/Documents/GitHub/ProjetoPython/chatbot.py",
+        "processed_question": "& c:/python312/python.ex c:/users/jefer/documents/github/projetopython/chatbot.py",
+        "response": "Você pode instalar bibliotecas em Python usando o gerenciador de pacotes pip. Por exemplo, para instalar a biblioteca requests, você usaria o comando 'pip install requests' no seu terminal.",
+        "similarity_score": 0.6967452764511108
+    },
+    {
+        "timestamp": "2025-01-05T11:16:52.959688",
+        "question": "quem é você?",
+        "processed_question": "voce?",
+        "response": "Não tenho a resposta para essa pergunta no momento.  Tente pesquisar na documentação do Python ou em fóruns online.",
+        "similarity_score": 0.5637288689613342
+    },
+    {
+        "timestamp": "2025-01-05T11:17:00.215473",
+        "question": "mas eae?",
+        "processed_question": "eae?",
+        "response": "Desculpe, eu não entendi o que você quis dizer.  Pode tentar escrever de outra forma?",
+        "similarity_score": 0.6241551041603088
+    },
+    {
+        "timestamp": "2025-01-05T11:21:52.537828",
+        "question": "& C:/Python312/python.exe c:/Users/jefer/Documents/GitHub/ProjetoPython/chatbot.py",
+        "processed_question": "& c:/python312/python.ex c:/users/jefer/documents/github/projetopython/chatbot.py",
+        "response": "Você pode instalar bibliotecas em Python usando o gerenciador de pacotes pip. Por exemplo, para instalar a biblioteca requests, você usaria o comando 'pip install requests' no seu terminal.",
+        "similarity_score": 0.6967452764511108
+    },
+    {
+        "timestamp": "2025-01-05T11:21:58.656936",
+        "question": "com vai?",
+        "processed_question": "vai?",
+        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
+        "similarity_score": 0.7121850848197937
+    },
+    {
+        "timestamp": "2025-01-05T11:22:08.912254",
+        "question": "quero aprender",
+        "processed_question": "quer aprend",
+        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
+        "similarity_score": 0.7126462459564209
+    },
+    {
+        "timestamp": "2025-01-05T11:22:13.071049",
+        "question": "aprender python",
+        "processed_question": "aprend python",
+        "response": "Os conceitos fundamentais de Python incluem variáveis, estruturas de dados (listas, dicionários, tuplas), funções, classes, loops e condicionais. Quer saber mais sobre algum desses tópicos específicos?",
+        "similarity_score": 0.937236487865448
+    },
+    {
+        "timestamp": "2025-01-05T11:22:18.608352",
+        "question": "quero",
+        "processed_question": "quer",
+        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
+        "similarity_score": 0.8263872265815735
+    }
+]
