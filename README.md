@@ -1,6 +1,6 @@
 # Python Chatbot - Assistente de Aprendizado
 
-![Imagem do Chatbot](https://github.com/Jeffinp/jefersonreis.github.io/blob/main/src/image/Chatbot.webp)
+[![Imagem do Chatbot](https://github.com/Jeffinp/jefersonreis.github.io/blob/main/src/image/Chatbot.webp?raw=true)](https://github.com/Jeffinp/ProjetoPython/tree/main)
 
 ## Descrição
 
@@ -40,8 +40,8 @@ Além disso, o projeto emprega as bibliotecas `NLTK` (Natural Language Toolkit) 
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [URL_DO_SEU_REPOSITORIO]
-    cd [NOME_DA_PASTA_DO_REPOSITORIO]
+    git clone [URL inválido removido]
+    cd ProjetoPython
     ```
 
 2.  **Crie um ambiente virtual (recomendado):**
