@@ -1,30 +1,61 @@
 {
     "saudacoes": [
-        "Olá! O que você gostaria de saber sobre Python?",
-        "Oi! Como posso ajudar você com Python hoje?",
-        "Fala aí! Pergunte-me qualquer coisa sobre Python."
+        "Olá!",
+        "Oi!",
+        "E aí!",
+        "Olá, tudo bem?"
     ],
     "despedidas": [
-        "Até mais!",
         "Tchau!",
-        "Foi um prazer conversar com você. Até a próxima!"
+        "Até mais!",
+        "Até logo!",
+        "Foi bom conversar com você!"
     ],
     "como_vai": [
-        "Estou bem, obrigado! Como posso ajudar você com Python hoje?",
-        "Tudo ótimo! O que você gostaria de saber sobre Python?",
-        "E aí? Tudo bem? Como posso te ajudar com Python hoje?"
-    ],
-    "conceitos_python": [
-        "Os conceitos fundamentais de Python incluem variáveis, estruturas de dados (listas, dicionários, tuplas), funções, classes, loops e condicionais. Quer saber mais sobre algum desses tópicos específicos?"
-    ],
-    "quem_e_voce": [
-        "Eu sou um chatbot de assistência em Python, projetado para ajudar você a aprender e entender melhor os conceitos dessa linguagem.",
-        "Sou um programa de computador que usa inteligência artificial para responder às suas perguntas sobre Python.",
-        "Fui criado para ser um recurso útil para quem está estudando Python, então não hesite em perguntar!"
+        "Estou bem, obrigado!",
+        "Vou bem, e você?",
+        "Estou ótimo, obrigado por perguntar."
     ],
     "fallback": [
-        "Desculpe, não tenho certeza se entendi sua pergunta. Você pode reformular?",
-        "Ainda estou aprendendo sobre Python. Pode tentar perguntar de outra forma?",
-        "Hmmm, não sei responder a essa pergunta específica. Que tal perguntar sobre outro tópico de Python?"
+        "Desculpe, não entendi.",
+        "Poderia reformular sua pergunta?",
+        "Não tenho certeza se compreendi.",
+        "Isso está além do meu conhecimento atual."
+    ],
+    "o que é python?": [
+        "Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte.",
+        "Python é uma linguagem versátil usada para desenvolvimento web, ciência de dados, inteligência artificial e muito mais."
+    ],
+    "como instalar python?": [
+        "Você pode baixar Python do site oficial python.org e seguir as instruções de instalação para o seu sistema operacional.",
+        "Em sistemas Linux, você geralmente pode instalar Python usando o gerenciador de pacotes da sua distribuição, como apt ou yum."
+    ],
+    "o que são variaveis em python?": [
+        "Variáveis são usadas para armazenar dados na memória. Em Python, você cria uma variável atribuindo um valor a um nome, por exemplo, `x = 10`."
+    ],
+    "o que é uma lista em python?": [
+        "Uma lista em Python é uma coleção ordenada e mutável de itens. Você pode criar uma lista usando colchetes, por exemplo, `minha_lista = [1, 2, 3]`."
+    ],
+    "o que é um dicionario em python?": [
+        "Um dicionário em Python é uma coleção de pares chave-valor. É uma estrutura de dados muito útil para armazenar dados de forma associativa. Exemplo: `meu_dicionario = {'nome': 'Alice', 'idade': 30}`."
+    ],
+    "o que é uma tupla em python?": [
+        "Uma tupla é semelhante a uma lista, mas é imutável, ou seja, seus elementos não podem ser alterados após a criação. Exemplo: `minha_tupla = (1, 2, 3)`."
+    ],
+    "o que sao loops em python?": [
+        "Loops são usados para executar um bloco de código repetidamente. Python possui os loops `for` e `while`."
+    ],
+    "o que sao funcoes em python?": [
+        "Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas ajudam a organizar o código e torná-lo mais modular."
+    ],
+    "o que sao classes em python?": [
+        "Classes são a base da programação orientada a objetos em Python. Elas permitem a criação de objetos que possuem atributos (dados) e métodos (funções)."
+    ],
+    "o que sao condicionais em python?": [
+        "Condicionais permitem que o programa tome decisões com base em condições. Em Python, usamos as palavras-chave `if`, `elif` e `else` para criar condicionais."
+    ],
+    "conceitos basicos de python": [
+        "Gostaria de saber mais sobre algum conceito básico de python? Como: variáveis, listas, dicionarios, tuplas, loops, funções, classes ou condicionais",
+        "Sobre qual conceito de python você quer aprender mais a fundo?"
     ]
 }

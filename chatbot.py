@@ -32,7 +32,7 @@ class ChatbotConfig:
     rules_file: str = 'rules.json'
     similarity_threshold: float = 0.5
 
-# Configure logging
+# Configure logging globally
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -54,27 +54,15 @@ class PythonChatbot:
             config (Optional[ChatbotConfig]): Configurações personalizadas
         """
         self.config = config or ChatbotConfig()
-        self._setup_logging()
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        logging.info("Usando device: %s", self.device)
+        logging.info(f"Usando device: {self.device}")
 
         self.model = self._load_model()
         self.conversation_history: List[Dict] = []
-        self.last_response_type = None
+        self.last_response_type = None  # Adicionado para rastrear o tipo da última resposta
 
         self._initialize_nlp_resources()
         self._load_rules()
-
-    def _setup_logging(self) -> None:
-        """Configura o sistema de logging."""
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler(self.config.log_file),
-                logging.StreamHandler()
-            ]
-        )
 
     def _load_model(self) -> SentenceTransformer:
         """
@@ -88,14 +76,11 @@ class PythonChatbot:
         """
         try:
             model = SentenceTransformer(self.config.model_name, device=self.device)
-            logging.info("Modelo '%s' carregado com sucesso", self.config.model_name)
+            logging.info(f"Modelo '{self.config.model_name}' carregado com sucesso")
             return model
-        except OSError as e:
-            logging.error("Erro de conexão ao carregar modelo: %s", e)
-            raise ModelLoadError(f"Erro de conexão ao carregar modelo: {str(e)}")
-        except ValueError as e:
-            logging.error("Configuração inválida do modelo: %s", e)
-            raise ModelLoadError(f"Configuração inválida do modelo: {str(e)}")
+        except Exception as e:
+            logging.error(f"Erro ao carregar modelo: {e}")
+            raise ModelLoadError(f"Erro ao carregar modelo: {e}")
 
     def _initialize_nlp_resources(self) -> None:
         """
@@ -105,13 +90,15 @@ class PythonChatbot:
             ResourceLoadError: Se houver erro ao carregar recursos
         """
         try:
-            nltk.download('stopwords', quiet=True)
-            nltk.download('rslp', quiet=True)
+            if not nltk.data.find('corpora/stopwords'):
+                nltk.download('stopwords', quiet=True)
+            if not nltk.data.find('stemmers/rslp'):
+                nltk.download('rslp', quiet=True)
             self.stopwords = set(nltk.corpus.stopwords.words('portuguese'))
             self.stemmer = RSLPStemmer()
         except LookupError as e:
-            logging.error("Erro ao baixar recursos NLTK: %s", e)
-            raise ResourceLoadError(f"Erro ao baixar recursos NLTK: {str(e)}")
+            logging.error(f"Erro ao baixar recursos NLTK: {e}")
+            raise ResourceLoadError(f"Erro ao baixar recursos NLTK: {e}")
 
     def _load_rules(self) -> None:
         """
@@ -124,9 +111,12 @@ class PythonChatbot:
             with open(self.config.rules_file, "r", encoding="utf-8") as f:
                 self.rules = json.load(f)
             logging.info("Regras carregadas com sucesso")
-        except (IOError, json.JSONDecodeError) as e:
-            logging.error("Erro ao carregar regras: %s", e)
-            raise ResourceLoadError(f"Erro ao carregar regras: {str(e)}")
+        except FileNotFoundError:
+            logging.error(f"Arquivo de regras não encontrado: {self.config.rules_file}")
+            raise ResourceLoadError(f"Arquivo de regras não encontrado: {self.config.rules_file}")
+        except json.JSONDecodeError as e:
+            logging.error(f"Erro ao decodificar JSON do arquivo de regras: {e}")
+            raise ResourceLoadError(f"Erro ao decodificar JSON do arquivo de regras: {e}")
 
         self.casual_patterns = {
             "tudo bem": "como_vai",
@@ -193,7 +183,7 @@ class PythonChatbot:
             "mt": "muito", "msg": "mensagem", "agr": "agora",
             "vdd": "verdade", "mto": "muito", "to": "estou",
             "ta": "está", "n": "não", "nao": "não", "td": "tudo",
-            "tá": "está"
+            "tá": "está", "pra": "para", "pro": "para o", "c/": "com"
             # Adicione mais abreviações conforme necessário
         }
         palavras = texto.split()
@@ -219,26 +209,27 @@ class PythonChatbot:
         return question
 
     def _find_best_response(self, question_embedding: torch.Tensor) -> Tuple[str, float]:
-        """Finds the best response based on similarity."""
+        """Encontra a melhor resposta com base na similaridade."""
 
-        best_similarity = -1  # Initialize appropriately
+        best_similarity = -1
         best_response = None
 
         for key, rule_embedding in self.rules_embeddings.items():
             similarity = util.pytorch_cos_sim(question_embedding, rule_embedding)[0].max().item()
             if similarity > best_similarity:
                 best_similarity = similarity
-                best_response = random.choice(self.rules[key])
-
+                best_response = key
 
         if best_similarity < self.config.similarity_threshold:
-            casual_response = self._check_casual_conversation(question) 
+            casual_response = self._check_casual_conversation(question_embedding)
             if casual_response:
                 best_response = casual_response
-            else: # Use fallback if casual conversation not found
-                best_response = random.choice(self.rules["fallback"])
+                best_similarity = 1.0  # Considerar alta similaridade para conversas casuais
+            else:
+                best_response = "fallback"
 
-        return best_response, best_similarity
+        return random.choice(self.rules[best_response]), best_similarity
+
 
     def _is_affirmative(self, text: str) -> bool:
         """Verifica se o texto é uma resposta afirmativa."""
@@ -246,11 +237,11 @@ class PythonChatbot:
         text = self._remove_acentos(text.lower()).strip()
         return text in affirmative_words
 
-    def _handle_affirmative_response(self, processed_question) -> Optional[str]:
+    def _handle_affirmative_response(self) -> Optional[str]:
         """Lida com respostas afirmativas do usuário."""
         if len(self.conversation_history) > 1:
-            previous_question = self.conversation_history[-2]['processed_question']
-            if "conceit" in previous_question:
+            # Usar o tipo da última pergunta para decidir se uma elaboração é necessária
+            if self.last_response_type == "pergunta_conceito":
                 return self._elaborate_on_last_topic()
         return None
 
@@ -259,18 +250,19 @@ class PythonChatbot:
         if len(self.conversation_history) < 2:
             return "Desculpe, não tenho um tópico anterior para elaborar."
 
-        last_question = self.conversation_history[-2]['processed_question']
+        # Obter o tipo da última pergunta registrada no histórico
+        last_question_type = self.conversation_history[-2].get('type')
 
-        if "conceit" in last_question:
+        if last_question_type == "pergunta_conceito":
             return self._explain_python_concepts()
-        
+
         return "Desculpe, não tenho mais informações sobre esse tópico."
 
     def _explain_python_concepts(self) -> str:
         """Fornece uma explicação detalhada dos conceitos básicos de Python."""
         concept_details = {
             "variaveis": ("Variáveis são usadas para armazenar dados. Em Python, você não precisa declarar "
-                           "explicitamente o tipo de uma variável. Exemplos: `x = 5`, `nome = 'Alice'`."),
+                          "explicitamente o tipo de uma variável. Exemplos: `x = 5`, `nome = 'Alice'`."),
             "listas": ("Listas são coleções ordenadas e mutáveis de itens. "
                        "Exemplo: `minha_lista = [1, 2, 'python']`."),
             "dicionarios": ("Dicionários armazenam pares de chave-valor, permitindo a recuperação rápida de valores "
@@ -278,11 +270,11 @@ class PythonChatbot:
             "tuplas": ("Tuplas são como listas, mas são imutáveis, ou seja, não podem ser alteradas após a criação. "
                       "Exemplo: `minha_tupla = (1, 2, 'python')`."),
             "loops": ("Loops são usados para executar um bloco de código repetidamente. "
-                      "Python tem loops `for` e `while`. Exemplo de loop `for`: `for i in range(5): print(i)`."),
+                     "Python tem loops `for` e `while`. Exemplo de loop `for`: `for i in range(5): print(i)`."),
             "funcoes": ("Funções são blocos de código reutilizáveis que realizam uma tarefa específica. "
                        "Exemplo: `def saudacao(nome): return 'Olá, ' + nome`."),
             "classes": ("Classes são usadas para criar objetos e são a base da programação orientada a objetos. "
-                        "Exemplo: `class Cachorro: def __init__(self, nome): self.nome = nome`."),
+                      "Exemplo: `class Cachorro: def __init__(self, nome): self.nome = nome`."),
             "condicionais": ("Condicionais permitem que o programa execute diferentes blocos de código com base em "
                              "condições. Exemplo: `if x > 0: print('Positivo') else: print('Não Positivo')`.")
         }
@@ -302,40 +294,40 @@ class PythonChatbot:
             str: Resposta do chatbot
         """
         try:
-            if question.lower() in ['sair', 'tchau', 'adeus']:
-                self.save_conversation()
-                return random.choice(self.rules["despedidas"])
-
-            casual_type = self._check_casual_conversation(question)
-            if casual_type:
-                return random.choice(self.rules[casual_type])
-
             if self._is_greeting(question):
+                self.last_response_type = "saudacao"
                 return random.choice(self.rules["saudacoes"])
 
             processed_question = self._preprocess_question(question)
 
             # Lidar com respostas afirmativas
             if self._is_affirmative(question) and len(self.conversation_history) > 0:
-                response = self._handle_affirmative_response(processed_question)
+                response = self._handle_affirmative_response()
                 if response:
                     return response
 
             question_embedding = self.model.encode(processed_question, convert_to_tensor=True)
             response, similarity = self._find_best_response(question_embedding)
 
+            # Registrar o tipo da pergunta atual
+            if "conceit" in processed_question:
+                self.last_response_type = "pergunta_conceito"
+            else:
+                self.last_response_type = "geral"
+
             self.conversation_history.append({
                 'timestamp': datetime.now().isoformat(),
                 'question': question,
                 'processed_question': processed_question,
                 'response': response,
-                'similarity_score': similarity
+                'similarity_score': similarity,
+                'type': self.last_response_type  # Adicionado para registrar o tipo da pergunta
             })
 
             return response
 
         except Exception as e:
-            logging.error("Erro ao gerar resposta: %s", str(e))
+            logging.error(f"Erro ao gerar resposta: {e}")
             return "Desculpe, ocorreu um erro ao processar sua pergunta. Pode tentar novamente?"
 
     def save_conversation(self) -> None:
@@ -347,7 +339,7 @@ class PythonChatbot:
                 json.dump(self.conversation_history, f, ensure_ascii=False, indent=4)
             logging.info("Histórico da conversa salvo com sucesso")
         except IOError as e:
-            logging.error("Erro ao salvar histórico: %s", str(e))
+            logging.error(f"Erro ao salvar histórico: {e}")
             print("Aviso: Não foi possível salvar o histórico da conversa")
 
     def run(self) -> None:
@@ -359,8 +351,6 @@ class PythonChatbot:
         try:
             while True:
                 question = input("Você: ").strip()
-                if not question:
-                    continue
 
                 if question.lower() == 'sair':
                     print("Chatbot:", random.choice(self.rules["despedidas"]))
@@ -374,8 +364,8 @@ class PythonChatbot:
             print("\nEncerrando o chatbot...")
             self.save_conversation()
         except ChatbotError as e:
-            logging.error("Erro do chatbot: %s", str(e))
-            print(f"Erro: {str(e)}")
+            logging.error(f"Erro do chatbot: {e}")
+            print(f"Erro: {e}")
             self.save_conversation()
 
 def main():
@@ -385,10 +375,10 @@ def main():
         chatbot = PythonChatbot(config)
         chatbot.run()
     except ChatbotError as e:
-        logging.error("Erro fatal: %s", str(e))
-        print(f"Erro crítico: {str(e)}")
+        logging.error(f"Erro fatal: {e}")
+        print(f"Erro crítico: {e}")
     except Exception as e:
-        logging.error("Erro não esperado: %s", str(e))
+        logging.error(f"Erro não esperado: {e}")
         print("Ocorreu um erro inesperado. O chatbot será encerrado.")
 
 if __name__ == "__main__":
