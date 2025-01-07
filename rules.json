@@ -3,74 +3,387 @@
         "Olá!",
         "Oi!",
         "E aí!",
-        "Olá, tudo bem?"
+        "Olá, tudo bem?",
+        "Oi, como posso ajudar?",
+        "Olá, seja bem-vindo!",
+        "Saudações!"
     ],
     "despedidas": [
         "Tchau!",
         "Até mais!",
         "Até logo!",
-        "Foi bom conversar com você!"
+        "Foi bom conversar com você!",
+        "Até a próxima!",
+        "Tchau, tchau!",
+        "Nos vemos em breve!"
     ],
     "como_vai": [
         "Estou bem, obrigado!",
         "Vou bem, e você?",
-        "Estou ótimo, obrigado por perguntar."
+        "Estou ótimo, obrigado por perguntar.",
+        "Estou funcionando perfeitamente!",
+        "Estou cada vez melhor!",
+        "Tudo tranquilo por aqui!"
+    ],
+    "agradecimentos": [
+        "De nada!",
+        "Por nada!",
+        "Disponha!",
+        "Não há de quê!",
+        "Às ordens!",
+        "Estou aqui para ajudar!",
+        "Fico feliz em poder ajudar!"
+    ],
+    "elogios": [
+        "Obrigado!",
+        "Fico feliz que você gostou!",
+        "É muito bom ouvir isso!",
+        "Estou sempre me esforçando para melhorar!",
+        "Agradeço o feedback positivo!"
+    ],
+    "pedir_desculpas": [
+        "Desculpe, não entendi.",
+        "Peço desculpas pelo erro.",
+        "Sinto muito por isso.",
+        "Vou tentar melhorar.",
+        "Estou trabalhando para ser mais preciso."
     ],
     "fallback": [
         "Desculpe, não entendi.",
         "Poderia reformular sua pergunta?",
         "Não tenho certeza se compreendi.",
-        "Isso está além do meu conhecimento atual."
+        "Isso está além do meu conhecimento atual.",
+        "Hum, não sei a resposta para essa pergunta.",
+        "Vou pesquisar mais sobre isso e te aviso.",
+        "Ainda estou aprendendo. Pode tentar perguntar de outra forma?",
+        "Não sei responder a essa pergunta no momento. Gostaria de saber mais sobre outro assunto?"
     ],
-    "o que é python?": [
-        "Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte.",
-        "Python é uma linguagem versátil usada para desenvolvimento web, ciência de dados, inteligência artificial e muito mais."
+    "sobre_python": {
+        "o_que_e_python": [
+            "Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte.",
+            "Python é uma linguagem versátil usada para desenvolvimento web, ciência de dados, inteligência artificial e muito mais.",
+            "Python é conhecido por sua sintaxe clara e legível, o que a torna uma ótima linguagem para iniciantes.",
+            "Python é uma linguagem de propósito geral, o que significa que ela pode ser usada para construir uma ampla variedade de aplicações.",
+            "Python possui uma grande e ativa comunidade de desenvolvedores, o que significa que há muitos recursos e suporte disponíveis."
+        ],
+        "historia_do_python": [
+            "Python foi criada por Guido van Rossum no final dos anos 80 e início dos anos 90 no Instituto Nacional de Pesquisa em Matemática e Ciência da Computação (CWI) na Holanda.",
+            "A primeira versão pública do Python, a versão 0.9.0, foi lançada em fevereiro de 1991.",
+            "O nome Python foi inspirado no grupo de comédia britânico Monty Python."
+        ],
+        "vantagens_do_python": [
+            "Python é fácil de aprender e usar.",
+            "Python é uma linguagem versátil que pode ser usada para uma ampla variedade de tarefas.",
+            "Python possui uma grande e ativa comunidade.",
+            "Python é uma linguagem de código aberto.",
+            "Python tem uma sintaxe clara e legível.",
+            "Python suporta múltiplos paradigmas de programação, incluindo programação procedural, orientada a objetos e funcional.",
+            "Python possui uma vasta biblioteca padrão que fornece módulos e pacotes para muitas tarefas comuns.",
+            "Python é uma linguagem interpretada, o que significa que o código pode ser executado linha por linha sem a necessidade de compilação."
+        ],
+        "desvantagens_do_python": [
+            "Python pode ser mais lento do que outras linguagens, como C++ ou Java.",
+            "Python não é a melhor escolha para desenvolvimento mobile ou de jogos.",
+            "O consumo de memória em Python pode ser alto.",
+            "Python tem tipagem dinâmica, o que pode levar a erros em tempo de execução."
+        ],
+        "aplicacoes_do_python": [
+            "Python é usado em desenvolvimento web (Django, Flask).",
+            "Python é amplamente usado em ciência de dados e machine learning (Pandas, NumPy, Scikit-learn).",
+            "Python é usado para automação de tarefas e scripting.",
+            "Python é usado em desenvolvimento de jogos (Pygame).",
+            "Python é usado em computação científica e engenharia.",
+            "Python é usado para desenvolvimento de aplicações desktop.",
+            "Python é usado em educação em programação."
+        ],
+        "empresas_que_usam_python": [
+            "Google",
+            "Facebook",
+            "Instagram",
+            "Netflix",
+            "Spotify",
+            "Dropbox",
+            "NASA",
+            "IBM",
+            "Mozilla",
+            "Reddit"
+        ]
+    },
+    "instalacao_configuracao": {
+        "como_instalar_python": [
+            "Você pode baixar Python do site oficial python.org e seguir as instruções de instalação para o seu sistema operacional.",
+            "Em sistemas Linux, você geralmente pode instalar Python usando o gerenciador de pacotes da sua distribuição, como apt ou yum.",
+            "No Windows, você pode usar o instalador oficial do Python ou uma distribuição como o Anaconda.",
+            "No macOS, você pode usar o instalador oficial do Python, Homebrew ou uma distribuição como o Anaconda."
+        ],
+        "como_instalar_pip": [
+            "O pip geralmente já vem instalado com o Python. Você pode verificar digitando `pip --version` no terminal.",
+            "Se o pip não estiver instalado, você pode instalá-lo usando o script `get-pip.py` que pode ser baixado do site oficial do Python.",
+            "Em sistemas Linux, você também pode instalar o pip usando o gerenciador de pacotes da sua distribuição, como `sudo apt-get install python3-pip`."
+        ],
+        "como_instalar_pacotes": [
+            "Você pode instalar pacotes Python usando o pip, o gerenciador de pacotes do Python. Por exemplo, para instalar o pacote `requests`, você digitaria `pip install requests` no terminal."
+        ],
+        "como_configurar_ambiente_virtual": [
+            "É recomendável usar um ambiente virtual para isolar as dependências dos seus projetos Python.",
+            "Você pode criar um ambiente virtual usando o módulo `venv` do Python. Por exemplo, `python3 -m venv .venv` cria um ambiente virtual chamado `.venv` no diretório atual.",
+            "Para ativar o ambiente virtual, use `source .venv/bin/activate` no Linux/macOS ou `.venv\\Scripts\\activate` no Windows."
+        ],
+        "editores_de_texto_ide": [
+            "Existem muitos editores de texto e IDEs para programar em Python, como VS Code, PyCharm, Sublime Text, Atom, Thonny e Spyder.",
+            "VS Code e PyCharm são duas das IDEs mais populares para Python.",
+            "Thonny é uma IDE simples e fácil de usar, ideal para iniciantes.",
+            "Sublime Text e Atom são editores de texto leves e rápidos com suporte a Python através de plugins."
+        ]
+    },
+    "conceitos_basicos": {
+        "o_que_sao_variaveis": [
+            "Variáveis são usadas para armazenar dados na memória. Em Python, você cria uma variável atribuindo um valor a um nome, por exemplo, `x = 10`.",
+            "Nomes de variáveis em Python podem conter letras, números e underscores, mas não podem começar com um número.",
+            "Python é uma linguagem de tipagem dinâmica, o que significa que você não precisa declarar o tipo de uma variável explicitamente."
+        ],
+        "tipos_de_dados": [
+            "Python possui vários tipos de dados integrados, como inteiros (int), números de ponto flutuante (float), strings (str), booleanos (bool), listas (list), tuplas (tuple) e dicionários (dict).",
+            "Inteiros representam números inteiros, como 1, 2, -3.",
+            "Números de ponto flutuante representam números decimais, como 3.14, -2.5.",
+            "Strings representam sequências de caracteres, como 'Olá, mundo!'.",
+            "Booleanos representam valores verdadeiros ou falsos (True ou False).",
+            "Listas são coleções ordenadas e mutáveis de itens.",
+            "Tuplas são coleções ordenadas e imutáveis de itens.",
+            "Dicionários são coleções de pares chave-valor."
+        ],
+        "o_que_e_uma_lista": [
+            "Uma lista em Python é uma coleção ordenada e mutável de itens. Você pode criar uma lista usando colchetes, por exemplo, `minha_lista = [1, 2, 3]`.",
+            "Listas podem conter itens de diferentes tipos de dados.",
+            "Você pode acessar elementos de uma lista usando índices, que começam em 0. Por exemplo, `minha_lista[0]` retorna o primeiro elemento da lista.",
+            "Você pode adicionar itens a uma lista usando o método `append()`, inserir itens em uma posição específica usando o método `insert()` e remover itens usando o método `remove()` ou `pop()`."
+        ],
+        "o_que_e_um_dicionario": [
+            "Um dicionário em Python é uma coleção de pares chave-valor. É uma estrutura de dados muito útil para armazenar dados de forma associativa. Exemplo: `meu_dicionario = {'nome': 'Alice', 'idade': 30}`.",
+            "Você pode acessar os valores de um dicionário usando suas chaves. Por exemplo, `meu_dicionario['nome']` retorna o valor associado à chave 'nome'.",
+            "Dicionários são mutáveis, o que significa que você pode adicionar, remover e modificar pares chave-valor após a criação do dicionário."
+        ],
+        "o_que_e_uma_tupla": [
+            "Uma tupla é semelhante a uma lista, mas é imutável, ou seja, seus elementos não podem ser alterados após a criação. Exemplo: `minha_tupla = (1, 2, 3)`.",
+            "Tuplas são usadas para representar coleções de itens que não devem ser alteradas.",
+            "Você pode acessar elementos de uma tupla usando índices, da mesma forma que em listas."
+        ],
+        "o_que_sao_loops": [
+            "Loops são usados para executar um bloco de código repetidamente. Python possui os loops `for` e `while`.",
+            "O loop `for` é usado para iterar sobre uma sequência (como uma lista, tupla ou string) ou outro objeto iterável.",
+            "O loop `while` é usado para executar um bloco de código enquanto uma condição for verdadeira."
+        ],
+        "o_que_sao_funcoes": [
+            "Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas ajudam a organizar o código e torná-lo mais modular.",
+            "Você define uma função usando a palavra-chave `def`, seguida pelo nome da função, parênteses `()` e dois pontos `:`. O corpo da função é indentado.",
+            "Funções podem receber argumentos (valores de entrada) e retornar valores de saída.",
+            "Exemplo de função: `def saudacao(nome): return 'Olá, ' + nome`."
+        ],
+        "o_que_sao_classes": [
+            "Classes são a base da programação orientada a objetos em Python. Elas permitem a criação de objetos que possuem atributos (dados) e métodos (funções).",
+            "Uma classe é como um molde para criar objetos. Objetos são instâncias de uma classe.",
+            "Classes definem a estrutura e o comportamento dos objetos.",
+            "Exemplo de classe: `class Cachorro: def __init__(self, nome): self.nome = nome`."
+        ],
+        "o_que_sao_condicionais": [
+            "Condicionais permitem que o programa tome decisões com base em condições. Em Python, usamos as palavras-chave `if`, `elif` e `else` para criar condicionais.",
+            "A condição em uma condicional é uma expressão booleana que é avaliada como verdadeira ou falsa.",
+            "O bloco de código associado a um `if` é executado se a condição for verdadeira.",
+            "O bloco de código associado a um `elif` é executado se a condição do `if` for falsa e a condição do `elif` for verdadeira.",
+            "O bloco de código associado a um `else` é executado se todas as condições anteriores forem falsas."
+        ],
+        "o_que_e_escopo": [
+            "Escopo se refere à região do código onde uma variável é acessível.",
+            "Em Python, variáveis definidas dentro de uma função têm escopo local, o que significa que elas só são acessíveis dentro da função.",
+            "Variáveis definidas fora de qualquer função têm escopo global, o que significa que elas são acessíveis em qualquer lugar do código."
+        ],
+        "o_que_e_recursao": [
+            "Recursão é uma técnica de programação onde uma função chama a si mesma.",
+            "Funções recursivas são úteis para resolver problemas que podem ser divididos em subproblemas menores do mesmo tipo.",
+            "É importante ter uma condição de parada em uma função recursiva para evitar que ela entre em um loop infinito."
+        ],
+        "o_que_e_import": [
+            "A palavra-chave `import` é usada para importar módulos em Python.",
+            "Módulos são arquivos que contêm código Python, como funções, classes e variáveis.",
+            "Importar um módulo permite que você use o código definido nesse módulo no seu próprio código.",
+            "Exemplo: `import math` importa o módulo `math`, que contém funções matemáticas."
+        ]
+    },
+    "aprendizado_e_pratica": {
+        "como_aprender_python": [
+            "Para aprender Python, recomendo começar com tutoriais online, como os do Codecademy ou do Khan Academy. Também existem muitos livros e cursos disponíveis.",
+            "Uma ótima maneira de aprender Python é praticando. Tente criar pequenos projetos ou resolver exercícios online.",
+            "Existem muitos recursos gratuitos disponíveis para aprender Python, como a documentação oficial e fóruns online.",
+            "Participe de comunidades online de Python, como grupos no Facebook ou canais no Discord, para interagir com outros aprendizes e tirar dúvidas."
+        ],
+        "recursos_para_aprender": [
+            "**Sites:** Codecademy, Khan Academy, Coursera, edX, Udemy, DataCamp, Real Python, LearnPython.org",
+            "**Livros:** 'Pense em Python' (Allen B. Downey), 'Python Fluente' (Luciano Ramalho), 'Automate the Boring Stuff with Python' (Al Sweigart), 'Python Crash Course' (Eric Matthes)",
+            "**Documentação Oficial:** docs.python.org",
+            "**Canais do YouTube:** Corey Schafer, TechWorld with Nana, freeCodeCamp.org, Keith Galli",
+            "**Fóruns:** Stack Overflow, Reddit (r/learnpython)"
+        ],
+        "dicas_para_aprender": [
+            "Defina metas claras e realistas para o seu aprendizado.",
+            "Organize seu tempo e crie uma rotina de estudos.",
+            "Pratique regularmente, mesmo que seja por apenas alguns minutos por dia.",
+            "Encontre um método de estudo que funcione para você (vídeos, livros, tutoriais interativos, etc.).",
+            "Não tenha medo de pedir ajuda quando estiver com dificuldades.",
+            "Participe de comunidades online e interaja com outros aprendizes.",
+            "Comece com projetos pequenos e vá aumentando a complexidade gradualmente.",
+            "Leia o código de outras pessoas para aprender novas técnicas e boas práticas.",
+            "Concentre-se em entender os conceitos fundamentais antes de se aprofundar em tópicos mais avançados.",
+            "Não desista! Aprender a programar leva tempo e esforço."
+        ],
+        "como_praticar_python": [
+            "Resolva exercícios em sites como HackerRank, LeetCode e Codewars.",
+            "Crie seus próprios projetos, mesmo que sejam simples no começo.",
+            "Contribua para projetos de código aberto no GitHub.",
+            "Participe de competições de programação, como o Google Code Jam ou o Facebook Hacker Cup.",
+            "Refatore o código que você já escreveu para torná-lo mais eficiente e legível."
+        ],
+        "projetos_para_iniciantes": [
+            "Calculadora simples",
+            "Jogo da velha",
+            "Lista de tarefas",
+            "Conversor de temperatura",
+            "Gerador de senhas",
+            "Pedra, Papel e Tesoura",
+            "Web Scraper simples para extrair dados de um site",
+            "Automação de tarefas simples, como renomear arquivos em massa"
+        ]
+    },
+    "erros_e_debug": {
+        "erros_comuns": [
+            "`SyntaxError`: Indica um erro de sintaxe no código, como um erro de digitação ou falta de dois pontos.",
+            "`TypeError`: Ocorre quando uma operação é realizada em um tipo de dado inadequado, como tentar somar uma string a um número.",
+            "`NameError`: Ocorre quando uma variável ou função não é encontrada no escopo atual.",
+            "`IndexError`: Ocorre quando você tenta acessar um índice inválido em uma lista ou tupla.",
+            "`KeyError`: Ocorre quando você tenta acessar uma chave que não existe em um dicionário.",
+            "`ValueError`: Ocorre quando uma função recebe um argumento do tipo certo, mas com um valor inválido.",
+            "`AttributeError`: Ocorre quando você tenta acessar um atributo ou método que um objeto não possui.",
+            "`ImportError`: Ocorre quando um módulo não pode ser importado.",
+            "`FileNotFoundError`: Ocorre quando o programa tenta abrir um arquivo que não existe."
+        ],
+        "como_debuggar": [
+            "Use `print()` para exibir os valores das variáveis em diferentes pontos do código.",
+            "Use um debugger, como o pdb (Python Debugger), para executar o código passo a passo e inspecionar o estado do programa.",
+            "Leia as mensagens de erro com atenção, pois elas geralmente fornecem pistas sobre a causa do erro.",
+            "Divida o código em partes menores e teste cada parte individualmente.",
+            "Use comentários para explicar o propósito do código e facilitar o entendimento.",
+            "Pesquise no Google ou no Stack Overflow por mensagens de erro semelhantes.",
+            "Peça ajuda a outros programadores em fóruns ou comunidades online."
+        ],
+        "o_que_e_pdb": [
+            "pdb é o debugger padrão do Python. Ele permite que você execute o código linha por linha, inspecione variáveis, defina breakpoints e muito mais.",
+            "Para usar o pdb, insira `import pdb; pdb.set_trace()` no ponto do código onde você deseja iniciar a depuração.",
+            "Alguns comandos úteis do pdb: `n` (next), `s` (step), `c` (continue), `p` (print), `q` (quit)."
+        ]
+    },
+    "boas_praticas": {
+        "convencoes_de_nomeacao": [
+            "Use nomes descritivos para variáveis e funções.",
+            "Use `snake_case` para nomes de variáveis e funções (por exemplo, `minha_variavel`, `calcular_media`).",
+            "Use `CamelCase` para nomes de classes (por exemplo, `MinhaClasse`, `CalculadoraFinanceira`).",
+            "Use `UPPER_CASE` para constantes (por exemplo, `PI`, `TAXA_DE_JUROS`)."
+        ],
+        "comentarios": [
+            "Use comentários para explicar o propósito do código e como ele funciona.",
+            "Escreva comentários claros e concisos.",
+            "Mantenha os comentários atualizados com o código.",
+            "Use docstrings para documentar funções, classes e módulos."
+        ],
+        "organizacao_do_codigo": [
+            "Divida o código em funções e módulos para torná-lo mais modular e reutilizável.",
+            "Mantenha as funções curtas e focadas em uma única tarefa.",
+            "Use classes para organizar dados e funções relacionadas.",
+            "Siga o princípio DRY (Don't Repeat Yourself) - Não Repita Você Mesmo.",
+            "Evite código duplicado, extraindo-o para funções ou classes reutilizáveis."
+        ],
+        "testes": [
+            "Escreva testes unitários para verificar se o código está funcionando conforme o esperado.",
+            "Use um framework de testes, como `unittest` ou `pytest`.",
+            "Teste diferentes cenários e casos extremos.",
+            "Automatize a execução dos testes usando um servidor de integração contínua."
+        ],
+        "pep_8": [
+            "PEP 8 é o guia de estilo para código Python.",
+            "Seguir as convenções do PEP 8 torna o código mais legível e consistente.",
+            "Use um linter, como `flake8` ou `pylint`, para verificar se o código segue o PEP 8.",
+            "Principais pontos do PEP 8 incluem: indentação com 4 espaços, linhas com no máximo 79 caracteres, nomes de variáveis e funções em `snake_case`, nomes de classes em `CamelCase`."
+        ]
+    },
+    "perguntas_frequentes": {
+        "diferenca_entre_lista_e_tupla": [
+            "A principal diferença entre listas e tuplas é que as listas são mutáveis, enquanto as tuplas são imutáveis.",
+            "Isso significa que você pode modificar uma lista após a sua criação (adicionar, remover ou alterar elementos), mas não pode modificar uma tupla."
+        ],
+        "diferenca_entre_igual_igual_e_is": [
+            "`==` verifica se dois objetos têm o mesmo valor.",
+            "`is` verifica se dois objetos são o mesmo objeto na memória.",
+            "Em geral, use `==` para comparar valores e `is` para verificar se duas variáveis se referem ao mesmo objeto."
+        ],
+        "como_funciona_o_gerenciamento_de_memoria": [
+            "Python usa um coletor de lixo automático para gerenciar a memória.",
+            "O coletor de lixo libera automaticamente a memória que não está mais sendo usada pelo programa.",
+            "Isso significa que você não precisa se preocupar em alocar e desalocar memória manualmente, como em linguagens como C ou C++."
+        ],
+        "o_que_e_um_decorador": [
+            "Um decorador é uma função que recebe outra função como entrada e estende o comportamento da função de entrada sem modificá-la explicitamente.",
+            "Decoradores são usados para adicionar funcionalidade a funções, como logging, memorização ou controle de acesso.",
+            "Decoradores são indicados com um `@` seguido pelo nome do decorador acima da definição da função."
+        ],
+        "o_que_e_uma_expressao_lambda": [
+            "Uma expressão lambda é uma função anônima de uma linha. É definida usando a palavra-chave lambda.",
+            "As expressões lambda são frequentemente usadas para funções simples que podem ser definidas em uma linha.",
+            "Por exemplo, `lambda x: x * 2` é uma expressão lambda que retorna o dobro de um número."
+        ],
+        "o_que_e_uma_compreensao_de_lista": [
+            "Uma compreensão de lista é uma maneira concisa de criar listas em Python.",
+            "Ela consiste em uma expressão seguida por uma cláusula `for` e, opcionalmente, uma ou mais cláusulas `if`.",
+            "Por exemplo, `[x**2 for x in range(10)]` cria uma lista dos quadrados dos números de 0 a 9."
+        ],
+        "o_que_e_um_gerador": [
+            "Um gerador é uma função que produz uma sequência de valores usando a palavra-chave `yield`.",
+            "Geradores são úteis para gerar sequências grandes ou infinitas de valores, pois eles não armazenam todos os valores na memória de uma só vez.",
+            "Cada vez que a função geradora é chamada, ela executa até encontrar a instrução `yield`. A função então retorna o valor especificado após o `yield` e pausa a execução. Na próxima chamada, a execução continua do ponto onde parou.",
+            "Exemplo de gerador: `def contagem_regressiva(n): while n > 0: yield n; n -= 1`."
+        ]
+    },
+    "mais_informacoes": {
+        "onde_encontrar_mais_informacoes": [
+            "A documentação oficial do Python é um ótimo lugar para encontrar mais informações sobre a linguagem (docs.python.org).",
+            "Existem muitos tutoriais e cursos online disponíveis para aprender Python.",
+            "Fóruns como o Stack Overflow e o Reddit são ótimos lugares para tirar dúvidas e obter ajuda."
+        ],
+        "como_contribuir_com_o_projeto": [
+            "Se você quiser contribuir com este projeto, você pode abrir um pull request no GitHub.",
+            "Certifique-se de seguir as diretrizes de contribuição do projeto.",
+            "Você também pode ajudar a melhorar a documentação ou traduzir o chatbot para outros idiomas."
+        ],
+        "quem_mantem_este_chatbot": [
+            "Este chatbot é mantido por [Seu Nome ou Nome da Organização].",
+            "Você pode entrar em contato conosco através do [Seu Email ou Página de Contato]."
+        ]
+    },
+    "como_vai?": [
+        "Estou bem, obrigado!",
+        "Vou bem, e você?",
+        "Estou ótimo, obrigado por perguntar.",
+        "Estou funcionando perfeitamente!",
+        "Estou cada vez melhor!",
+        "Tudo tranquilo por aqui!"
     ],
-    "como instalar python?": [
-        "Você pode baixar Python do site oficial python.org e seguir as instruções de instalação para o seu sistema operacional.",
-        "Em sistemas Linux, você geralmente pode instalar Python usando o gerenciador de pacotes da sua distribuição, como apt ou yum."
+    "quem_e_voce?": [
+        "Eu sou um chatbot projetado para fornecer informações e assistência sobre a linguagem de programação Python.",
+        "Sou um assistente virtual aqui para ajudar a esclarecer suas dúvidas sobre Python e programação em geral.",
+        "Sou um chatbot ainda em desenvolvimento, mas estou constantemente aprendendo e melhorando."
     ],
-    "o que são variaveis em python?": [
-        "Variáveis são usadas para armazenar dados na memória. Em Python, você cria uma variável atribuindo um valor a um nome, por exemplo, `x = 10`."
-    ],
-    "o que é uma lista em python?": [
-        "Uma lista em Python é uma coleção ordenada e mutável de itens. Você pode criar uma lista usando colchetes, por exemplo, `minha_lista = [1, 2, 3]`."
-    ],
-    "o que é um dicionario em python?": [
-        "Um dicionário em Python é uma coleção de pares chave-valor. É uma estrutura de dados muito útil para armazenar dados de forma associativa. Exemplo: `meu_dicionario = {'nome': 'Alice', 'idade': 30}`."
-    ],
-    "o que é uma tupla em python?": [
-        "Uma tupla é semelhante a uma lista, mas é imutável, ou seja, seus elementos não podem ser alterados após a criação. Exemplo: `minha_tupla = (1, 2, 3)`."
-    ],
-    "o que sao loops em python?": [
-        "Loops são usados para executar um bloco de código repetidamente. Python possui os loops `for` e `while`."
-    ],
-    "o que sao funcoes em python?": [
-        "Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas ajudam a organizar o código e torná-lo mais modular."
-    ],
-    "o que sao classes em python?": [
-        "Classes são a base da programação orientada a objetos em Python. Elas permitem a criação de objetos que possuem atributos (dados) e métodos (funções)."
-    ],
-    "o que sao condicionais em python?": [
-        "Condicionais permitem que o programa tome decisões com base em condições. Em Python, usamos as palavras-chave `if`, `elif` e `else` para criar condicionais."
-    ],
-    "conceitos basicos de python": [
-        "Gostaria de saber mais sobre algum conceito básico de python? Como: variáveis, listas, dicionarios, tuplas, loops, funções, classes ou condicionais",
-        "Sobre qual conceito de python você quer aprender mais a fundo?"
-    ],
-    "como aprender algo?": [
-        "Uma boa maneira de aprender algo novo é através de cursos online, tutoriais, livros e prática constante.",
-        "Existem muitos recursos disponíveis online para aprender, como vídeos, artigos e fóruns de discussão."
-    ],
-    "como aprender?": [
-        "Depende do que você quer aprender! Mas, em geral, é importante ter dedicação, praticar regularmente e buscar bons materiais de estudo."
-    ],
-    "dicas para aprender": [
-        "Defina metas claras, organize seu tempo, pratique regularmente, encontre um método de estudo que funcione para você e não tenha medo de pedir ajuda."
-    ],
-    "como aprender python?": [
-        "Para aprender Python, recomendo começar com tutoriais online, como os do Codecademy ou do Khan Academy. Também existem muitos livros e cursos disponíveis.",
-        "Uma ótima maneira de aprender Python é praticando. Tente criar pequenos projetos ou resolver exercícios online.",
-        "Existem muitos recursos gratuitos disponíveis para aprender Python, como a documentação oficial e fóruns online."
+    "o_que_voce_pode_fazer?": [
+        "Posso responder a perguntas sobre Python, como sua sintaxe, conceitos básicos e aplicações.",
+        "Posso fornecer explicações sobre tópicos como variáveis, listas, dicionários, loops, funções e muito mais.",
+        "Posso ajudar com a instalação e configuração do Python, além de sugerir recursos úteis para aprendizado.",
+        "Posso dar dicas sobre boas práticas de programação e como resolver erros comuns.",
+        "Estou aqui para ajudar você a aprender e entender melhor a linguagem Python. Pergunte-me qualquer coisa!"
     ]
 }
