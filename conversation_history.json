@@ -1,51 +1,10 @@
 [
     {
-        "timestamp": "2025-01-05T11:37:04.302679",
-        "question": "quem é vocÊ?",
-        "processed_question": "voce?",
-        "response": "Olá! Como posso ajudar?",
-        "similarity_score": 0.7019724249839783
-    },
-    {
-        "timestamp": "2025-01-05T11:37:11.603559",
-        "question": "conceitos de python",
-        "processed_question": "conceit python",
-        "response": "Os conceitos fundamentais de Python incluem variáveis, estruturas de dados (listas, dicionários, tuplas), funções, classes, loops e condicionais. Quer saber mais sobre algum desses tópicos específicos?",
-        "similarity_score": 0.8155840635299683
-    },
-    {
-        "timestamp": "2025-01-05T11:37:16.099170",
-        "question": "Quero",
-        "processed_question": "quer",
-        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
-        "similarity_score": 0.8263872265815735
-    },
-    {
-        "timestamp": "2025-01-05T11:37:25.819230",
-        "question": "quero aprender sobre tuplas",
-        "processed_question": "quer aprend sobr tupl",
-        "response": "Estou bem, obrigado! Como posso ajudar você com Python hoje?",
-        "similarity_score": 0.6410931348800659
-    },
-    {
-        "timestamp": "2025-01-05T11:37:29.682833",
-        "question": "classes",
-        "processed_question": "cl",
-        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
-        "similarity_score": 0.7992007732391357
-    },
-    {
-        "timestamp": "2025-01-05T11:37:32.337601",
-        "question": "funções",
-        "processed_question": "funco",
-        "response": "Desculpe, não tenho nada para repetir pois não falei nada anteriormente.",
-        "similarity_score": 0.6418232917785645
-    },
-    {
-        "timestamp": "2025-01-05T11:37:35.178960",
-        "question": "aprender funções",
-        "processed_question": "aprend funco",
-        "response": "E aí? Tudo bem? Como posso te ajudar com Python hoje?",
-        "similarity_score": 0.6348042488098145
+        "timestamp": "2025-01-07T19:34:56.099930",
+        "question": "Como instalar o python?",
+        "processed_question": "instal python?",
+        "response": "Você pode baixar Python do site oficial python.org e seguir as instruções de instalação para o seu sistema operacional.",
+        "similarity_score": 0.9002623558044434,
+        "type": "geral"
     }
 ]
