@@ -1,4 +1,8 @@
-sentence-transformers
-torch
-unidecode
-nltk
+sentence-transformers>=2.0.0
+torch>=1.7.0
+unidecode>=1.3.0
+nltk>=3.8.0
+tqdm>=4.65.0
+transformers>=4.35.0
+numpy>=1.24.0
+scikit-learn>=1.0.0

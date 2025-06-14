@@ -43,3 +43,33 @@
 2025-01-07 19:49:10,258 - WARNING - Invalid model-index. Not loading eval results into CardData.
 2025-01-07 19:49:10,269 - INFO - Modelo 'rufimelo/bert-large-portuguese-cased-sts' carregado com sucesso
 2025-01-07 19:49:10,280 - INFO - Regras carregadas com sucesso
+2025-06-14 15:30:28,122 - INFO - Usando device: cpu
+2025-06-14 15:30:28,123 - INFO - Load pretrained SentenceTransformer: rufimelo/bert-large-portuguese-cased-sts
+2025-06-14 15:36:23,323 - INFO - Usando device: cpu
+2025-06-14 15:36:23,323 - INFO - Load pretrained SentenceTransformer: rufimelo/bert-large-portuguese-cased-sts
+2025-06-14 15:38:21,195 - WARNING - Invalid model-index. Not loading eval results into CardData.
+2025-06-14 15:38:22,646 - WARNING - Invalid model-index. Not loading eval results into CardData.
+2025-06-14 15:38:22,653 - INFO - Modelo 'rufimelo/bert-large-portuguese-cased-sts' carregado com sucesso
+2025-06-14 15:38:22,656 - ERROR - Erro fatal: Erro ao baixar recursos NLTK: 
+**********************************************************************
+  Resource [93mstopwords[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('stopwords')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mcorpora/stopwords[0m
+
+  Searched in:
+    - 'C:\\Users\\jeff/nltk_data'
+    - 'C:\\Users\\jeff\\AppData\\Local\\Programs\\Python\\Python311\\nltk_data'
+    - 'C:\\Users\\jeff\\AppData\\Local\\Programs\\Python\\Python311\\share\\nltk_data'
+    - 'C:\\Users\\jeff\\AppData\\Local\\Programs\\Python\\Python311\\lib\\nltk_data'
+    - 'C:\\Users\\jeff\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
