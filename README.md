@@ -69,7 +69,11 @@ Além disso, o projeto emprega as bibliotecas `NLTK` (Natural Language Toolkit) 
 
 5.  **Baixe os recursos do NLTK (se necessário):**
 
-    - Execute o script Python uma vez, ele vai baixar automaticamente.
+    - O chatbot baixará automaticamente os recursos necessários do NLTK na primeira execução
+    - Alternativamente, você pode baixá-los manualmente com:
+      ```bash
+      python -c "import nltk; nltk.download('stopwords'); nltk.download('rslp')"
+      ```
 
 6.  **Execute o chatbot:**
 

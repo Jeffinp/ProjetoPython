@@ -73,3 +73,10 @@
     - 'E:\\nltk_data'
 **********************************************************************
 
+2025-06-14 15:43:17,987 - INFO - Usando device: cpu
+2025-06-14 15:43:18,001 - INFO - Load pretrained SentenceTransformer: rufimelo/bert-large-portuguese-cased-sts
+2025-06-14 15:43:41,361 - WARNING - Invalid model-index. Not loading eval results into CardData.
+2025-06-14 15:43:41,583 - WARNING - Invalid model-index. Not loading eval results into CardData.
+2025-06-14 15:43:41,592 - INFO - Modelo 'rufimelo/bert-large-portuguese-cased-sts' carregado com sucesso
+2025-06-14 15:43:42,511 - INFO - Regras carregadas com sucesso
+2025-06-14 15:43:59,401 - INFO - Histórico da conversa salvo com sucesso

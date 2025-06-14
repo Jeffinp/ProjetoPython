@@ -1,5 +1,5 @@
 """
-Módulo de processamento de linguagem natural para o chatbot.
+M�dulo de processamento de linguagem natural para o chatbot.
 """
 
 import nltk
@@ -13,11 +13,11 @@ class NLPProcessor:
     """
     Classe para processamento de linguagem natural.
     """
-    
+
     def __init__(self):
         """Inicializa o processador de NLP."""
         self._initialize_nlp_resources()
-        
+
     def _initialize_nlp_resources(self) -> None:
         """
         Inicializa recursos de NLP (NLTK).
@@ -26,18 +26,21 @@ class NLPProcessor:
             ResourceLoadError: Se houver erro ao carregar recursos
         """
         try:
-            # Baixar recursos do NLTK independentemente de já estarem presentes
-            nltk.download("stopwords", quiet=False)
-            nltk.download("rslp", quiet=False)
-            
+            # Baixar recursos do NLTK independentemente de j� estarem presentes
+            nltk.download("stopwords", quiet=True)
+            nltk.download("rslp", quiet=True)
+
             # Verificar se os recursos foram baixados corretamente
-            if not nltk.data.find("corpora/stopwords"):
-                raise LookupError("Recurso 'stopwords' não foi baixado corretamente")
-            if not nltk.data.find("stemmers/rslp"):
-                raise LookupError("Recurso 'rslp' não foi baixado corretamente")
-                
-            self.stopwords = set(nltk.corpus.stopwords.words("portuguese"))
-            self.stemmer = RSLPStemmer()
+            try:
+                self.stopwords = set(nltk.corpus.stopwords.words("portuguese"))
+                self.stemmer = RSLPStemmer()
+            except LookupError:
+                # Se falhar, tente novamente com quiet=False para mostrar mais informa��es
+                print("Tentando baixar recursos NLTK novamente...")
+                nltk.download("stopwords", quiet=False)
+                nltk.download("rslp", quiet=False)
+                self.stopwords = set(nltk.corpus.stopwords.words("portuguese"))
+                self.stemmer = RSLPStemmer()
         except Exception as e:
             raise ResourceLoadError(f"Erro ao baixar recursos NLTK: {e}") from e
 
@@ -46,18 +49,18 @@ class NLPProcessor:
         return unidecode(texto)
 
     def expandir_abreviacoes(self, texto: str) -> str:
-        """Expande abreviações comuns."""
+        """Expande abrevia��es comuns."""
         abreviacoes = {
-            "vc": "você",
+            "vc": "voc�",
             "pq": "porque",
             "oq": "o que",
-            "eh": "é",
+            "eh": "�",
             "q": "que",
-            "tb": "também",
-            "tbm": "também",
+            "tb": "tamb�m",
+            "tbm": "tamb�m",
             "blz": "beleza",
             "cmg": "comigo",
-            "sao": "são",
+            "sao": "s�o",
             "obg": "obrigado",
             "mt": "muito",
             "msg": "mensagem",
@@ -65,11 +68,11 @@ class NLPProcessor:
             "vdd": "verdade",
             "mto": "muito",
             "to": "estou",
-            "ta": "está",
-            "n": "não",
-            "nao": "não",
+            "ta": "est�",
+            "n": "n�o",
+            "nao": "n�o",
             "td": "tudo",
-            "tá": "está",
+            "t�": "est�",
             "pra": "para",
             "pro": "para o",
             "c/": "com",
@@ -88,12 +91,12 @@ class NLPProcessor:
         return " ".join(palavras)
 
     def stemming(self, texto: str) -> str:
-        """Aplica stemming às palavras de uma string."""
+        """Aplica stemming �s palavras de uma string."""
         palavras = [self.stemmer.stem(palavra) for palavra in texto.split()]
         return " ".join(palavras)
 
     def preprocess_question(self, question: str) -> str:
-        """Pré-processa a pergunta."""
+        """Pr�-processa a pergunta."""
         question = self.remove_acentos(question.lower())
         question = self.expandir_abreviacoes(question)
         question = self.remover_stopwords(question)
